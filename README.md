@@ -5,7 +5,7 @@
 Lädt die (meisten) Dateien für das "Standard" oder "WW2" repository herunter. Kann helfen, wenn das Sync Tool sich im Download aufhängt.
 
 ## Benutzung
-Starte das Tool mit `java -jar RosenrudelManualDownload.jar`. Es wird nach den *Einstellungen* gefragt.
+Starte das Tool mit `java -jar RosenrudelManualDownload.jar`. Es wird nach den [Einstellungen](https://github.com/Alf-Melmac/RosenrudelManualDownload#einstellungen) gefragt.
 
 Nach Beendigung des Downloads, dass Tool gibt darüber Bescheid und beendet sich, muss das Sync Tool neu gestartet werden und das gewünschte Repository ausgewählt werden.
 Dann erkennt Sals die geladenen Dateien von selbst und fügt oder updated noch letzte Dateien. Dieser zweite Download sollte ziemlich klein sein.
