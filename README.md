@@ -20,6 +20,9 @@ Bei jedem Start des Tools werden folgende Einstellungen abgefragt:
 | Sollen Dateien die keinem Unterordner zugeordnet werden können übersprungen werden? | Nein | Beim Download werden Unterordner (0, 2, 3, 5[, 6]) angelegt. Potenziell können nicht alle Downloads in einen dieser Unterordner eingeordnet werden. Falls "Ja" wird ein Ordner *manualDownload* angelegt aus dem die Ordner/Dateien dann manuell verschoben werden müssen. |
 | Repository oder Bucket Urls | - | Die Auswahl der unterstützen Repositories aus Sals oder die Angabe eigener Urls.
 
+## Download
+[ftp://alf.codes/domains/alf.codes/public_ftp/RosenrudelManuelDownload/de/alf/RosenrudelManualDownload/1.0/RosenrudelManualDownload-1.0.jar](ftp://alf.codes/domains/alf.codes/public_ftp/RosenrudelManuelDownload/de/alf/RosenrudelManualDownload/1.0/RosenrudelManualDownload-1.0.jar)
+
 ## Debugging
 **:warning: Diese Einstellungen können die Anwendung sehr langsam machen oder unerwartet beenden. Sollte nur von erfahrenen Anwendern verwendet werden.**
 
