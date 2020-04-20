@@ -21,7 +21,7 @@ Bei jedem Start des Tools werden folgende Einstellungen abgefragt:
 | Repository oder Bucket Urls | - | Die Auswahl der unterstützen Repositories aus Sals oder die Angabe eigener Urls.
 
 ## Download
-[ftp://alf.codes/domains/alf.codes/public_ftp/RosenrudelManuelDownload/de/alf/RosenrudelManualDownload/1.0/RosenrudelManualDownload-1.0.jar](ftp://alf.codes/domains/alf.codes/public_ftp/RosenrudelManuelDownload/de/alf/RosenrudelManualDownload/1.0/RosenrudelManualDownload-1.0.jar)
+ftp://alf.codes/domains/alf.codes/public_ftp/RosenrudelManuelDownload/de/alf/RosenrudelManualDownload/1.0/RosenrudelManualDownload-1.0.jar
 
 ## Debugging
 **:warning: Diese Einstellungen können die Anwendung sehr langsam machen oder unerwartet beenden. Sollte nur von erfahrenen Anwendern verwendet werden.**
