@@ -19,9 +19,10 @@ import java.util.logging.Level;
 public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		Logger.setLogLevel(Level.OFF);
 
 		if (args != null && args.length == 1) {
-			if (args[0].equalsIgnoreCase("true")) {
+			if (args[0].equalsIgnoreCase("dev")) {
 				System.out.println("Dev options");
 				System.out.println("0: Set debug level, 1: print know subdirectories and mods in them");
 				try {
@@ -54,7 +55,7 @@ public class Main {
 		//User input save Path
 		String gSyncPath = null;
 		while (!PathHelper.validatePath(gSyncPath)) {
-			System.out.println("Speicherpfad (z.B. C:\\Users\\{USERNAME}}\\AppData\\Roaming\\sals-rosenrudel\\gSync): ");
+			System.out.println("Speicherpfad (z.B. C:\\Users\\{USERNAME}\\AppData\\Roaming\\sals-rosenrudel\\gSync): ");
 			gSyncPath = scanner.nextLine();
 		}
 
@@ -121,6 +122,8 @@ public class Main {
 			final Map<String, String> urlPathMapping = PathHelper.buildUrlPathMap(baseUrl, gSyncPath, pathKeys);
 			DownloadHelper.download(urlPathMapping, overwriteExisting);
 		}
+
+		System.out.println("Download abgeschlossen. Nun den Sals Launcher öffnen, dass gewünschte repository auswählen und den Download der übriggeblieben Restdateien starten. Dieser Download sollte ziemlich klein sein.");
 
 	}
 
