@@ -21,8 +21,11 @@ Bei jedem Start des Tools werden folgende Einstellungen abgefragt:
 | Repository oder Bucket Urls | - | Die Auswahl der unterstützen Repositories aus Sals oder die Angabe eigener Urls.
 
 ## Download
+Letztes Release: 19.06.2020
+
 https://alf.codes/rrDownload
-Alternative: https://www.dropbox.com/s/2vxast3ffxzy6hx/RosenrudelManualDownload-1.0.jar?dl=0
+
+Alternative: https://www.dropbox.com/s/dhvd0ys2fcjxilg/RosenrudelManualDownload-1.1.jar?dl=0
 
 ## Debugging
 **:warning: Diese Einstellungen können die Anwendung sehr langsam machen oder unerwartet beenden. Sollte nur von erfahrenen Anwendern verwendet werden.**
