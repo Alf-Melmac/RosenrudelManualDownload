@@ -86,10 +86,6 @@ public class PathHelper {
 			return 0;
 		} else if (two.stream().anyMatch(savePath::startsWith)) {
 			return 2;
-		} else if (three.stream().anyMatch(savePath::startsWith)) {
-			return 3;
-		} else if (five.stream().anyMatch(savePath::startsWith)) {
-			return 5;
 		} else if (six.stream().anyMatch(savePath::startsWith)) {
 			return 6;
 		} else {
@@ -107,50 +103,25 @@ public class PathHelper {
 		PathHelper.skipNonMatchable = skipNonMatchable;
 	}
 
-	private static final List<Integer> matchableSubDirectories = Arrays.asList(0, 2, 3, 5, 6);
+	private static final List<Integer> matchableSubDirectories = Arrays.asList(0, 2, 6);
 
-	private static final List<String> zero = Arrays.asList("@3denEnhanced", "@Immerse", "@ace", "@InteriorsForCUP",
-			"@ace_compat_rhs_afrf3", "@ITC_Land_Systems", "@ace_compat_rhs_gref3",
-			"@ITC_Land_Systems_RHS_AFRF_Compatibility", "@ace_compat_rhs_usf3",
-			"@ITC_Land_Systems_RHS_USAF_Compatibility", "@ace_nouniformrestrictions", "@L_climb", "@ace_particles",
-			"@LAMBS_Danger.fsm", "@ace_tracers", "@LAMBS_suppression", "@ACEX", "@MrSanchezHeadlamps", "@Achilles",
-			"@PaddleMod", "@acre_sys_gm", "@PLPMarkers", "@ACRE2", "@RHSAFRF", "@AdvancedSlingLoading", "@RHSGREF",
-			"@AdvancedTowing", "@RHSSAF", "@Align", "@RHSUSAF", "@BoxLoader", "@RR_audio", "@BoxloaderACE",
-			"@RR_babe_WOS", "@BrushClearing", "@RR_CBASettings", "@CBA_A3", "@RR_commons_resources",
-			"@CUPTerrains_Core", "@RR_wallAvoidance", "@CUPTerrainsACEComp", "@rspncaves", "@DismountWhereYouLook",
-			"@Suppress", "@dznExtendedJamming", "@VET_Unflipping", "@EasyTrack", "@vurtualsCarSeatAndStretcher",
-			"@ExtendedFortifications", "@ZeusEnhanced", "@GRAD_Trenches");
+	private static final List<String> zero = Arrays.asList("@3denEnhanced", "@ace", "@ACEX", "@ace_nouniformrestrictions",
+			"@ace_particles", "@ace_tracers", "@Achilles", "@ACRE2", "@acre_sys_gm", "@AdvancedSlingLoading",
+			"@AdvancedTowing", "@Align", "@BoxLoader", "@BoxloaderACE", "@BrushClearing", "@CBA_A3", "@CUPTerrainsACEComp",
+			"@CUPTerrains_Core", "@DismountWhereYouLook", "@dznExtendedJamming", "@EasyTrack", "@ExtendedFortifications",
+			"@GRAD_Trenches", "@Immerse", "@InteriorsForCUP", "@LAMBS_Danger.fsm", "@LAMBS_suppression", "@L_climb",
+			"@MrSanchezHeadlamps", "@PaddleMod", "@PLPMarkers", "@RR_audio", "@RR_babe_WOS", "@RR_backwardsComp",
+			"@RR_CBASettings", "@RR_commons_resources", "@RR_Persistence_Client", "@RR_wallAvoidance", "@rspncaves",
+			"@Suppress", "@VET_Unflipping", "@vurtualsCarSeatAndStretcher", "@ZeusEnhanced");
 
-	private static final List<String> two = Arrays.asList("@@Horror_Mod", "@CUPTerrains_Core", "@Jbad", "@RHSUSAF",
-			"@3CB_Factions", "@CUPTerrainsACEComp", "@Kidal", "@RKSLMk5LAndingCraft", "@ace_compat_rhs_afrf3",
-			"@Desert Battlegrounds", "@Kujari", "@Rosche", "@ace_compat_rhs_gref3", "@Em_Buildings",
-			"@Kunduz_Afghanistan", "@RR_RHS_sounds", "@ace_compat_rhs_usf3", "@Esseker_Fixed", "@LYTHIUM", "@Ruegen",
-			"@ACE3__BWMod_Compatibility", "@FapovoIsland", "@MBGBuildingsRosche", "@Ruha", "@AfricanRebels",
-			"@Hellanmaa", "@MCAGCC29Palms", "@Summa", "@Anizay", "@hlEcho", "@PLP_Containers", "@TRIA", "@Beketov",
-			"@Ihantala", "@Pulau", "@Vinjesvingen", "@Bozcaada", "@Ihantala_Winter", "@RHSAFRF", "@Virolahti",
-			"@Bundeswehr_Kleiderkammer_PBW_", "@InteriorsForCUP", "@RHSGREF", "@BWMod",
-			"@ITC_Land_Systems_RHS_AFRF_Compatibility", "@RHSPKL", "@CUPMaps2v0",
-			"@ITC_Land_Systems_RHS_USAF_Compatibility", "@RHSSAF");
-
-	private static final List<String> three = Arrays.asList("@[Discontinued]Fox F.D.N.Y Pack", "@KA Suitcase Nuke",
-			"@[Discontinued]Fox NYPD Pack", "@KA Weapons Pack NEW", "@[MELB] Mission Enhanced Little Bird",
-			"@KokaKolaA3's Gesture Pack (Animations)", "@A3_Funiture_Pack", "@Little Yacht", "@A3F_Factory", "@Luke",
-			"@Accessoire", "@Military Gear Pack", "@ace", "@Multi-play Uniforms", "@ACE 3 Extension (Gestures)",
-			"@Office_Building", "@acex", "@OneUnited", "@Antonov An-2", "@PLP_Addons", "@ANZINS Sun",
-			"@Project Infinite - All in one", "@ANZINS Terrain",
-			"@Radio Animations for Advanced Combat Radio Enviroment 2", "@AR Hand Weapon Detector", "@RH_Pistol_pack",
-			"@AR Megaphone", "@RHSUSAF", "@Arganiny's Civilian Project", "@RKSL Studios- Attachments v3.01",
-			"@Arma3_Coustum_Buildings", "@Sabs Ultralight", "@BUGATTI DIVO - COP", "@Sac", "@BUGATTI VEYRON SS",
-			"@Santa Claus", "@CBA_A3", "@Schert´s Firestation", "@Charlieco", "@Schert´s Hospital",
-			"@CYBER PUNK POLICE", "@skn_nbc_units", "@Eden_Extended_Objekts", "@Specter Armaments", "@ENFORCER",
-			"@TAC VESTS", "@Enhanced Movement", "@Tactical Position Ready", "@Enhanced Soundscape", "@Tanoa_Bridges",
-			"@Fl0's ACE³ Interactions", "@task_force_radio", "@Gilet-Veste", "@Uriki's Ballistic Mask", "@HAZMAT Corps",
-			"@Uriki's Mask Mod", "@JSRS SOUNDMOD", "@Urikis_Mission_Items",
-			"@JSRS SOUNDMOD - RHS USAF Mod Pack Sound Support", "@V12 BIKE PACK", "@KA Specially Equipped Pack",
-			"@V12_BikerPack", "@KA Specially Equipped Pack error fix"
-	);
-
-	private static final List<String> five = Collections.singletonList("@ACEX");
+	private static final List<String> two = Arrays.asList("@3CB_Factions", "@@Horror_Mod", "@ACE3__BWMod_Compatibility",
+			"@ace_compat_rhs_afrf3", "@ace_compat_rhs_gref3", "@ace_compat_rhs_usf3", "@AfricanRebels", "@Anizay",
+			"@Beketov", "@Bozcaada", "@Bundeswehr_Kleiderkammer_PBW_", "@BWMod", "@CUPMaps2v0", "@Desert Battlegrounds",
+			"@Em_Buildings", "@Esseker_Fixed", "@FapovoIsland", "@Hellanmaa", "@hl2Zombies", "@hlEcho", "@Ihantala",
+			"@Ihantala_Winter", "@Jbad", "@Kidal", "@Kujari", "@Kunduz_Afghanistan", "@LYTHIUM", "@MBGBuildingsRosche",
+			"@MCAGCC29Palms", "@PLP_Containers", "@Pulau", "@RHSAFRF", "@RHSGREF", "@RHSPKL", "@RHSSAF", "@RHSUSAF",
+			"@RKSLMk5LAndingCraft", "@Rosche", "@RR_RHS_sounds", "@Ruegen", "@Ruha", "@Summa", "@TRIA", "@Vinjesvingen",
+			"@Virolahti");
 
 	private static final List<String> six = Arrays.asList("@IFA3_AIO_LITE", "@NorthernFronts", "@NorthernFrontsTerrains");
 
@@ -158,8 +129,6 @@ public class PathHelper {
 		System.out.println("Directories :" + matchableSubDirectories.stream().map(Object::toString).collect(Collectors.joining(", ")));
 		System.out.println("0: " + String.join(", ", zero));
 		System.out.println("2: " + String.join(", ", two));
-		System.out.println("3: " + String.join(", ", three));
-		System.out.println("5: " + String.join(", ", five));
 		System.out.println("6: " + String.join(", ", six));
 	}
 }
