@@ -22,6 +22,7 @@ Bei jedem Start des Tools werden folgende Einstellungen abgefragt:
 
 ## Download
 https://alf.codes/rrDownload
+Alternative: https://www.dropbox.com/s/2vxast3ffxzy6hx/RosenrudelManualDownload-1.0.jar?dl=0
 
 ## Debugging
 **:warning: Diese Einstellungen können die Anwendung sehr langsam machen oder unerwartet beenden. Sollte nur von erfahrenen Anwendern verwendet werden.**
