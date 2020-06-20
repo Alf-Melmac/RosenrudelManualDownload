@@ -23,7 +23,7 @@
 	<distributionManagement>
 		<repository>
 			<id>ftp-repository</id>
-			<url>ftp://alf.codes/domains/alf.codes/public_ftp/RosenrudelManuelDownload/</url>
+			<url>ftp://alf.codes/domains/alf.codes/public_ftp/RosenrudelManualDownload/</url>
 		</repository>
 	</distributionManagement>
 
