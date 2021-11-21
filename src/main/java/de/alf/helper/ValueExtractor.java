@@ -15,13 +15,14 @@ import java.io.InputStream;
 import java.io.StringReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * Helper to return Values from XML document
  *
  * @author Alf
- * @version 1.0
+ * @version 2.0-SNAPSHOT
  * @since 14.03.2020
  */
 public class ValueExtractor {
@@ -32,7 +33,7 @@ public class ValueExtractor {
 	 * @param tagName to which the values are to be returned
 	 * @return List of values
 	 */
-	public static ArrayList<String> getValues(String url, String tagName) {
+	public static List<String> getValues(String url, String tagName) {
 		return getString(tagName, getElement(url));
 	}
 

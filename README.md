@@ -2,30 +2,30 @@
 
 ## Kommandozeilen-Tool
 
-Lädt die (meisten) Dateien für das "Standard" oder "WW2" repository herunter. Kann helfen, wenn das Sync Tool sich im Download aufhängt.
+Lädt die (meisten) Dateien für das "Lite" Repository herunter. Kann helfen, wenn SALS sich im Download aufhängt.
 
 ## Benutzung
 Starte das Tool mit `java -jar RosenrudelManualDownload.jar`. Es wird nach den [Einstellungen](https://github.com/Alf-Melmac/RosenrudelManualDownload#einstellungen) gefragt.
 
-Nach Beendigung des Downloads, dass Tool gibt darüber Bescheid und beendet sich, muss das Sync Tool neu gestartet werden und das gewünschte Repository ausgewählt werden.
-Dann erkennt Sals die geladenen Dateien von selbst und fügt oder updated noch letzte Dateien. Dieser zweite Download sollte ziemlich klein sein.
+Nach Beendigung des Downloads, das Tool gibt darüber Bescheid und beendet sich, muss SALS neu gestartet werden und das gewünschte Repository ausgewählt werden.
+Dann erkennt SALS die geladenen Dateien von selbst und fügt hinzu oder updated noch letzte Dateien. Dieser zweite Download sollte ziemlich klein sein.
 
 ## Einstellungen
 Bei jedem Start des Tools werden folgende Einstellungen abgefragt:
 
 | Einstellung | Standard | Erklärung |
 | :---------- | :------- | :-------- |
-| Speicherpfad  | - | Wie im Sals Launcher konfiguriert. Standardmäßig unter C:\Users\\{USERNAME}\AppData\Roaming\sals-rosenrudel\gSync |
-| Sollen bereits vorhandene Dateien ersetzt werden? | Nein | Durch einen vorhergegangen Download oder bereits von Sals gedownloadete Dateien werden bei "Ja" mit dem neuen Download überschrieben. |
-| Sollen Dateien die keinem Unterordner zugeordnet werden können übersprungen werden? | Nein | Beim Download werden Unterordner (0, 2, 3, 5[, 6]) angelegt. Potenziell können nicht alle Downloads in einen dieser Unterordner eingeordnet werden. Falls "Ja" wird ein Ordner *manualDownload* angelegt aus dem die Ordner/Dateien dann manuell verschoben werden müssen. |
-| Repository oder Bucket Urls | - | Die Auswahl der unterstützen Repositories aus Sals oder die Angabe eigener Urls.
+| Speicherpfad  | - | Wie im SALS Launcher konfiguriert. Standardmäßig unter %APPDATA%\sals\gSync |
+| Sollen bereits vorhandene Dateien ersetzt werden? | Nein | Durch einen vorhergegangen Download oder bereits von SALS gedownloadete Dateien werden bei "Ja" mit dem neuen Download überschrieben. |
+| Sollen Dateien die keinem Unterordner zugeordnet werden können übersprungen werden? | Nein | Beim Download werden Unterordner (1, 5, 6) angelegt. Potenziell können nicht alle Downloads in einen dieser Unterordner eingeordnet werden. Falls "Ja" wird ein Ordner *manualDownload* angelegt aus dem die Ordner/Dateien dann manuell verschoben werden müssen. |
+| Repository oder Bucket Urls | - | Die Auswahl der unterstützen Repositories aus SALS oder die Angabe eigener Urls.
 
 ## Download
 Letztes Release: 19.06.2020
 
-https://alf.codes/rrDownload
+X
 
-Alternative: https://www.dropbox.com/s/dhvd0ys2fcjxilg/RosenrudelManualDownload-1.1.jar?dl=0
+Nächste Version 2.0 updatet auf aktuellen Stand und bietet "Lite" zum Download an.
 
 ## Debugging
 **:warning: Diese Einstellungen können die Anwendung sehr langsam machen oder unerwartet beenden. Sollte nur von erfahrenen Anwendern verwendet werden.**

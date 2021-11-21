@@ -5,15 +5,12 @@ import de.alf.helper.PathHelper;
 import de.alf.helper.ValueExtractor;
 import de.alf.logging.Logger;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.Level;
 
 /**
  * @author Alf
- * @version 1.0
+ * @version 2.0-SNAPSHOT
  * @since 14.03.2020
  */
 public class Main {
@@ -21,30 +18,28 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		Logger.setLogLevel(Level.OFF);
 
-		if (args != null && args.length == 1) {
-			if (args[0].equalsIgnoreCase("dev")) {
-				System.out.println("Dev options");
-				System.out.println("0: Set debug level, 1: print know subdirectories and mods in them");
-				try {
-					boolean config = true;
-					while (scanner.hasNextLine() && config) {
-						switch (scanner.nextInt()) {
-							case 0:
-								System.out.println("Level?");
-								if (scanner.hasNextLine()) {
-									scanner.nextLine();
-									Logger.setLogLevel(Level.parse(scanner.nextLine().toUpperCase()));
-								}
-								break;
-							case 1:
-								PathHelper.printKnownSubDirectories();
-								break;
-							default:
-								config = false;
-						}
+		if ((args != null && args.length == 1) && args[0].equalsIgnoreCase("dev")) {
+			System.out.println("Dev options");
+			System.out.println("0: Set debug level, 1: print know subdirectories and mods in them");
+			try {
+				boolean config = true;
+				while (scanner.hasNextLine() && config) {
+					switch (scanner.nextInt()) {
+						case 0:
+							System.out.println("Level?");
+							if (scanner.hasNextLine()) {
+								scanner.nextLine();
+								Logger.setLogLevel(Level.parse(scanner.nextLine().toUpperCase()));
+							}
+							break;
+						case 1:
+							PathHelper.printKnownSubDirectories();
+							break;
+						default:
+							config = false;
 					}
-				} catch (InputMismatchException ignored) {
 				}
+			} catch (InputMismatchException ignored) {
 			}
 		}
 
@@ -55,7 +50,7 @@ public class Main {
 		//User input save Path
 		String gSyncPath = null;
 		while (!PathHelper.validatePath(gSyncPath)) {
-			System.out.println("Speicherpfad (z.B. C:\\Users\\{USERNAME}\\AppData\\Roaming\\sals-rosenrudel\\gSync): ");
+			System.out.println("Speicherpfad (z.B. %APPDATA%\\sals\\gSync): ");
 			gSyncPath = scanner.nextLine();
 		}
 
@@ -76,19 +71,16 @@ public class Main {
 
 		//User input baseUrls
 		System.out.println("Repository oder Bucket Urls");
-		System.out.println("'Standard' eingeben für 'https://s3-1.sals.app/rosenrudel-base/' und 'https://s3-1.sals.app/rosenrudel-standard/'");
-		System.out.println("'WW2' eingeben für 'https://s3-1.sals.app/rosenrudel-ww2/'");
+		System.out.println("'Lite' eingeben für 'https://s3-1.sals.app/sals-1-base/', 'https://s3-1.sals.app/sals-1-blastcore/' und 'https://s3-1.sals.app/sals-1-cup/'");
 		System.out.println("Urls eingeben, danach 'done' eintippen");
 		ArrayList<String> baseUrls = new ArrayList<>();
 		String input;
 		while (scanner.hasNextLine()) {
 			input = scanner.nextLine();
-			if (input.equalsIgnoreCase("Standard")) {
-				baseUrls.add("https://s3-1.sals.app/rosenrudel-base/");
-				baseUrls.add("https://s3-1.sals.app/rosenrudel-standard/");
-				break;
-			} else if (input.equalsIgnoreCase("WW2")) {
-				baseUrls.add("https://s3-1.sals.app/rosenrudel-ww2/");
+			if (input.equalsIgnoreCase("Lite")) {
+				baseUrls.add("https://s3-1.sals.app/sals-1-base/");
+				baseUrls.add("https://s3-1.sals.app/sals-1-blastcore/");
+				baseUrls.add("https://s3-1.sals.app/sals-1-cup/");
 				break;
 			} else if (!input.equalsIgnoreCase("done")) {
 				baseUrls.add(input);
@@ -113,18 +105,17 @@ public class Main {
 		} else {
 			System.out.println("Unterordner ohne Zuordnung werden unter " + gSyncPath + "\\manualDownload abgelegt. Diese müssen manuell eingeordnet werden.");
 		}
-		System.out.println("Bucket Urls: " + baseUrls.toString());
+		System.out.println("Bucket Urls: " + baseUrls);
 
 		printSeparator();
 
 		for (String baseUrl : baseUrls) {
-			final ArrayList<String> pathKeys = ValueExtractor.getValues(baseUrl, "Key");
+			final List<String> pathKeys = ValueExtractor.getValues(baseUrl, "Key");
 			final Map<String, String> urlPathMapping = PathHelper.buildUrlPathMap(baseUrl, gSyncPath, pathKeys);
 			DownloadHelper.download(urlPathMapping, overwriteExisting);
 		}
 
-		System.out.println("Download abgeschlossen. Nun den Sals Launcher öffnen, dass gewünschte repository auswählen und den Download der übriggeblieben Restdateien starten. Dieser Download sollte ziemlich klein sein.");
-
+		System.out.println("Download abgeschlossen. Nun den Sals Launcher öffnen, dass gewünschte Repository auswählen und den Download der übriggeblieben Restdateien starten. Dieser Download sollte ziemlich klein sein.");
 	}
 
 	private static void printSeparator() {
