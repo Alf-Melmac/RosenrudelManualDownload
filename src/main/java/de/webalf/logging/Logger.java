@@ -1,4 +1,4 @@
-package de.alf.logging;
+package de.webalf.logging;
 
 import java.util.logging.Level;
 

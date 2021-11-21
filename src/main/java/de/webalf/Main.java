@@ -1,9 +1,9 @@
-package de.alf;
+package de.webalf;
 
-import de.alf.helper.DownloadHelper;
-import de.alf.helper.PathHelper;
-import de.alf.helper.ValueExtractor;
-import de.alf.logging.Logger;
+import de.webalf.helper.DownloadHelper;
+import de.webalf.helper.PathHelper;
+import de.webalf.helper.ValueExtractor;
+import de.webalf.logging.Logger;
 
 import java.util.*;
 import java.util.logging.Level;

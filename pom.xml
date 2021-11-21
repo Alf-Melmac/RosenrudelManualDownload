@@ -40,7 +40,7 @@
 					<appendAssemblyId>false</appendAssemblyId>
 					<archive>
 						<manifest>
-							<mainClass>de.alf.Main</mainClass>
+							<mainClass>de.webalf.Main</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>

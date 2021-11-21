@@ -1,6 +1,6 @@
-package de.alf.helper;
+package de.webalf.helper;
 
-import de.alf.logging.Logger;
+import de.webalf.logging.Logger;
 
 import java.io.File;
 import java.util.Arrays;

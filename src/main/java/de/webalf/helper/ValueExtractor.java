@@ -1,6 +1,6 @@
-package de.alf.helper;
+package de.webalf.helper;
 
-import de.alf.logging.Logger;
+import de.webalf.logging.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
