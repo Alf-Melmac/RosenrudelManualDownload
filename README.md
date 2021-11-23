@@ -21,11 +21,8 @@ Bei jedem Start des Tools werden folgende Einstellungen abgefragt:
 | Repository oder Bucket Urls | - | Die Auswahl der unterstützen Repositories aus SALS oder die Angabe eigener Urls.
 
 ## Download
-Letztes Release: 19.06.2020
-
-X
-
-Nächste Version 2.0 updatet auf aktuellen Stand und bietet "Lite" zum Download an.
+Letztes Release: 23.11.2021
+https://armamachtbock.de/download/RosenrudelManualDownload-2.0.jar
 
 ## Debugging
 **:warning: Diese Einstellungen können die Anwendung sehr langsam machen oder unerwartet beenden. Sollte nur von erfahrenen Anwendern verwendet werden.**
