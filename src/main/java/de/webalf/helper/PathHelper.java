@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * Helper to perform tasks with urls and paths
  *
  * @author Alf
- * @version 2.0-SNAPSHOT
+ * @version 2.0
  * @since 14.03.2020
  */
 public class PathHelper {

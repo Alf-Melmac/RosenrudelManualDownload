@@ -22,7 +22,7 @@ import java.util.Scanner;
  * Helper to return Values from XML document
  *
  * @author Alf
- * @version 2.0-SNAPSHOT
+ * @version 2.0
  * @since 14.03.2020
  */
 public class ValueExtractor {

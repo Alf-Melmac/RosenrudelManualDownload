@@ -10,7 +10,7 @@ import java.util.logging.Level;
 
 /**
  * @author Alf
- * @version 2.0-SNAPSHOT
+ * @version 2.0
  * @since 14.03.2020
  */
 public class Main {
