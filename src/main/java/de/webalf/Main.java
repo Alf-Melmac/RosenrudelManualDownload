@@ -18,7 +18,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		Logger.setLogLevel(Level.OFF);
 
-		if ((args != null && args.length == 1) && args[0].equalsIgnoreCase("dev")) {
+		if (args != null && args[0].equalsIgnoreCase("dev")) {
 			System.out.println("Dev options");
 			System.out.println("0: Set debug level, 1: print know subdirectories and mods in them");
 			try {
@@ -35,9 +35,8 @@ public class Main {
 						case 1:
 							PathHelper.printKnownSubDirectories();
 							break;
-						default:
-							config = false;
 					}
+					config = false;
 				}
 			} catch (InputMismatchException ignored) {
 			}
@@ -50,7 +49,7 @@ public class Main {
 		//User input save Path
 		String gSyncPath = null;
 		while (!PathHelper.validatePath(gSyncPath)) {
-			System.out.println("Speicherpfad (z.B. %APPDATA%\\sals\\gSync): ");
+			System.out.println("Speicherpfad (z.B. C:\\Users\\{{USERNAME}}\\AppData\\Roaming\\sals\\gSync): ");
 			gSyncPath = scanner.nextLine();
 		}
 
@@ -112,7 +111,9 @@ public class Main {
 		for (String baseUrl : baseUrls) {
 			final List<String> pathKeys = ValueExtractor.getValues(baseUrl, "Key");
 			final Map<String, String> urlPathMapping = PathHelper.buildUrlPathMap(baseUrl, gSyncPath, pathKeys);
+			System.out.println("Download von " + baseUrl + " gestartet.");
 			DownloadHelper.download(urlPathMapping, overwriteExisting);
+			System.out.println("Download von " + baseUrl + " beendet.");
 		}
 
 		System.out.println("Download abgeschlossen. Nun den Sals Launcher öffnen, dass gewünschte Repository auswählen und den Download der übriggeblieben Restdateien starten. Dieser Download sollte ziemlich klein sein.");

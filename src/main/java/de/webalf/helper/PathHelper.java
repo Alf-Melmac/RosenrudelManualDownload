@@ -50,7 +50,7 @@ public class PathHelper {
 		for (String path : pathKeys) {
 			String localPath = moveToSubDirectory(path);
 			if (path != null) {
-				urlPathMapping.put(baseUrl + path, replaceWrongSlashes(gSyncPath + localPath));
+				urlPathMapping.put(baseUrl + encode(path), replaceWrongSlashes(gSyncPath + localPath));
 			}
 		}
 		return urlPathMapping;
@@ -65,13 +65,17 @@ public class PathHelper {
 	private static String moveToSubDirectory(String savePath) {
 		Integer subDirectory = evaluateSubDirectory(savePath);
 		if (matchableSubDirectories.stream().anyMatch(subDirectory::equals)) {
-			return subDirectory + SLASH + savePath;
+			return "1" + SLASH + subDirectory + SLASH + savePath;
 		} else if (isSkipNonMatchable()) {
 			Logger.logWarning("Skipping " + savePath);
 			return null;
 		} else {
-			return "/manualDownload" + SLASH + savePath;
+			return SLASH + "manualDownload" + SLASH + savePath;
 		}
+	}
+
+	private static String encode(String path) {
+		return Arrays.stream(path.split(SLASH)).map(splitted -> splitted.replace(" ", "%20")).collect(Collectors.joining(SLASH));
 	}
 
 	/**
@@ -108,15 +112,15 @@ public class PathHelper {
 
 	private static final List<Integer> matchableSubDirectories = Arrays.asList(1, 5, 6);
 
-	private static final List<String> one = Arrays.asList("@3denEnhanced", "@ACRE Animations", "@ACRE2", "@AWESome",
-			"@AdvancedSlingLoading", "@Align", "@BoxLoader", "@BoxloaderACE", "@BrighterFlares", "@BrushClearing", "@CBA_A3",
-			"@DismountWhereYouLook", "@EasyTrack", "@ExtendedFortifications", "@GRAD_Trenches", "@Gruppe Adler Pace Count Beads",
-			"@Helicopter Turbulence", "@Immerse", "@LAMBS_Danger.fsm", "@LAMBS_suppression", "@L_climb", "@MrSanchezHeadlamps",
-			"@PLPMarkers", "@PaddleMod", "@RR_CBASettings", "@RR_Commons_Resources", "@RR_Persistence_Client", "@RR_audio",
-			"@RR_babe_WOS", "@RR_backwardsComp", "@RR_mapStuff", "@RR_wallAvoidance", "@RideWhereYouLook", "@Suppress",
-			"@VET_Unflipping", "@Zeus Enhanced - ACE3 Compatibility", "@ZeusEnhanced", "@ace", "@ace_nouniformrestrictions",
-			"@ace_particles", "@ace_realisticdispersion", "@ace_tracers", "@acre_sys_gm", "@dznExtendedJamming", "@rspncaves",
-			"@vurtualsCarSeatAndStretcher");
+	private static final List<String> one = Arrays.asList("@3denEnhanced", "@ace/", "@ace_nouniformrestrictions",
+			"@ace_particles", "@ace_realisticdispersion", "@ace_tracers", "@ACRE Animations", "@ACRE2", "@acre_sys_gm",
+			"@AdvancedSlingLoading", "@Align", "@AWESome", "@BoxLoader", "@BoxloaderACE", "@BrighterFlares", "@BrushClearing",
+			"@CBA_A3", "@DismountWhereYouLook", "@dznExtendedJamming", "@EasyTrack", "@ExtendedFortifications",
+			"@GRAD_Trenches", "@Gruppe Adler Pace Count Beads", "@Helicopter Turbulence", "@Immerse", "@LAMBS_Danger.fsm",
+			"@LAMBS_suppression", "@L_climb", "@MrSanchezHeadlamps", "@PaddleMod", "@PLPMarkers", "@RideWhereYouLook",
+			"@RR_audio", "@RR_babe_WOS", "@RR_backwardsComp", "@RR_CBASettings", "@RR_Commons_Resources", "@RR_mapStuff",
+			"@RR_Persistence_Client", "@RR_wallAvoidance", "@rspncaves", "@Suppress", "@VET_Unflipping",
+			"@vurtualsCarSeatAndStretcher", "@Zeus Enhanced - ACE3 Compatibility", "@ZeusEnhanced/");
 
 	private static final List<String> five = List.of("@Blastcore Murr Edition");
 

@@ -25,7 +25,14 @@ public class DownloadHelper {
 	 * @param overwriteExistingFiles true if files should be overwritten
 	 */
 	public static void download(Map<String, String> urlPathMapping, boolean overwriteExistingFiles) {
-		urlPathMapping.forEach((url, path) -> DownloadHelper.download(url, path, overwriteExistingFiles));
+		final int size = urlPathMapping.size();
+		int i = 1;
+		for (Map.Entry<String, String> entry : urlPathMapping.entrySet()) {
+			final String key = entry.getKey();
+			System.out.println("Downloading " + i + "/" + size + "(" + key + ")");
+			DownloadHelper.download(key, entry.getValue(), overwriteExistingFiles);
+			i++;
+		}
 	}
 
 	/**
@@ -46,7 +53,7 @@ public class DownloadHelper {
 
 		File file = new File(savePath);
 		if (file.isFile() && !overwriteExistingFiles) {
-			Logger.logWarning("File already exists in: " + savePath);
+			Logger.logInfo("File already exists in: " + savePath);
 			return;
 		}
 
